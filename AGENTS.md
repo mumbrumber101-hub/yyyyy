@@ -1,0 +1,56 @@
+# About page editorial requirements
+
+This repository serves the embedded About page and annotated bibliography at
+https://www.arriveateasterwine.com/portfolio. It is not the Works catalogue.
+
+The user requires the Chicago Manual of Style for every addition and edit.
+Use the current edition. Preserve the author's language, source evidence,
+qualifications, original URLs, record IDs, and distinctions between factual
+errors and disagreements. Do not add em dashes to editorial prose.
+
+## Title treatment
+
+- Italicize books, collections, novels, journals, magazines, newspapers,
+  named blogs, podcast series, and other standalone works. Use semantic `<em>`.
+- Put stories, essays, articles, individual blog posts, podcast episodes,
+  chapters, and unpublished dissertations in curly double quotation marks.
+  Inside a quoted title, use single quotation marks for nested titles or quotes;
+  keep embedded book titles italicized.
+- Use roman type for people, institutions, general websites and platforms,
+  archival collections, informal series/cycle names, and descriptive labels.
+  Italicize a ship's name only when it identifies the vessel.
+- Decide each occurrence in context. *Nine Hundred Grandmothers* is a
+  collection; “Nine Hundred Grandmothers” is a story. Dotty the character is
+  roman; *Dotty* the novel is italic. Argo cycle is roman; *Argo* the book is
+  italic. Do not apply unreviewed title-matching replacements.
+- Use Chicago capitalization for new English editorial titles; preserve
+  verified source wording, deliberate authorial styling, foreign-language
+  conventions, and errors explicitly being documented. Do not silently
+  rewrite quotations or turn an uncertainty into a verified fact.
+- Put commas and periods inside closing quotation marks. Keep punctuation,
+  possessive endings, volume/issue numbers, dates, and page locators outside
+  italics unless they belong to the title itself. Keep numeric ranges as en
+  dashes. Plain CSV exports cannot carry italics; do not put raw HTML in them.
+
+## Updating the catalogue
+
+The `script#data` JSON array in `index.html` is the source of the catalogue.
+Each record retains plain `title`, `venue`, and `annotation` fields for search,
+CSV export, and comparison with sources. It also has editorially reviewed
+`titleHtml`, `venueHtml`, `annotationHtml`, and `titleKind` fields.
+`titleKind` is `short`, `book`, or `description`. Formatted fields may contain
+only escaped text and `<em>` tags. Keep their words in agreement with the
+plain fields. Review formatting again whenever any source field changes.
+
+Run `python scripts/build_catalogue.py` to regenerate static rows and counts.
+Run `python scripts/build_catalogue.py --check` before committing. The check
+rejects missing formatting, invalid markup, altered source words, stale rows,
+and stale counts. It cannot decide literary identity or certify every Chicago
+rule: that editorial review remains required.
+
+Before publishing, compare all original fields with the previous version.
+Confirm that only the intended content changed and that IDs, links, authors,
+dates, access limitations, and annotations remain intact. Check the rendered
+About text, expanded bibliography, filtering, reset, and CSV export. Verify the
+live page after deployment. Read the latest branch before editing and never
+overwrite a concurrent change.
