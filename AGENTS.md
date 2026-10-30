@@ -54,3 +54,13 @@ dates, access limitations, and annotations remain intact. Check the rendered
 About text, expanded bibliography, filtering, reset, and CSV export. Verify the
 live page after deployment. Read the latest branch before editing and never
 overwrite a concurrent change.
+
+## Inline source reader
+
+`reader.js` and `reader.css` provide one reading panel below the selected
+entry. Keep original source URLs and normal modified-click/new-tab behavior.
+Keep Close reader and Open original available. A publisher may prohibit
+embedding; do not bypass that restriction or claim a frame loaded successfully
+merely because its load event fired. Google Drive previews retain the original
+file ID. New entries gain the reader automatically. Verify open, close, source
+switching, filtering/reset while open, and keyboard focus after reader changes.
