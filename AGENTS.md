@@ -67,6 +67,9 @@ switching, filtering/reset while open, and keyboard focus after reader changes.
 Opening a reader must not call `scrollIntoView` or change the viewport. This
 document is embedded in Wix; ancestor scrolling can put the panel off screen.
 Keep focus changes non-scrolling and verify position on the actual Wix page.
+Opening an inline reader or citation keeps focus on its activating control.
+Do not programmatically focus a control in the expanded panel: the containing
+Wix iframe may scroll even when the inner focus call uses `preventScroll`.
 
 ## Chicago citation export
 

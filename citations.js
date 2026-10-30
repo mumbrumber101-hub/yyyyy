@@ -113,7 +113,7 @@
     active = {host, trigger};
     trigger.setAttribute('aria-expanded', 'true');
     trigger.setAttribute('aria-controls', panel.id);
-    done.focus({preventScroll:true});
+    // Inline disclosures keep focus on their trigger, including inside Wix.
   }
   for (const row of document.querySelectorAll('#entries tr[data-id]')) {
     const id = row.dataset.id;

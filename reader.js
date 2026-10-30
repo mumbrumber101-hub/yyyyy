@@ -106,9 +106,10 @@
       trigger.setAttribute('aria-expanded', 'true');
       trigger.setAttribute('aria-controls', panel.id);
     }
-    close.focus({preventScroll: true});
     // Wix embeds this document in a tall iframe. Scrolling an element into
     // view here also scrolls its ancestors and can move the reader off screen.
+    // Keep focus on the activating link or button, as with an inline disclosure.
+    // Even focus({preventScroll:true}) can move the containing Wix page.
     // Leave the viewport at the clicked entry as the panel expands beneath it.
   }
 
