@@ -123,8 +123,14 @@ if __name__ == '__main__':
     opts = args.parse_args()
     original = PAGE.read_text()
     result, records = build(original)
+    from build_citations import build as build_citations
+    citation_path = ROOT / 'citations-data.js'
+    citation_output = build_citations(records)
     if opts.check and result != original:
         raise SystemExit('Static rows or counts are stale. Run scripts/build_catalogue.py.')
+    if opts.check and (not citation_path.exists() or citation_path.read_text() != citation_output):
+        raise SystemExit('Citations are stale. Run scripts/build_catalogue.py.')
     if not opts.check:
         PAGE.write_text(result)
+        citation_path.write_text(citation_output)
     print(f'Validated {len(records)} records: reviewed markup, source words, links, rows, and counts.')

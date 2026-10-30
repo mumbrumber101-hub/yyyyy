@@ -1,0 +1,19 @@
+.entry-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}
+.entry-actions .read-here,.entry-actions .cite-entry{display:inline-block;margin:0;padding:6px 10px;font-size:12px}
+.citation-row>td{padding:0 0 24px;border:0}
+.citation-panel{border:1px solid var(--line);padding:20px;background:var(--wash);overflow-anchor:none}
+.citation-header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.citation-header h3{font:normal 23px/1.3 Georgia,'Times New Roman',serif;margin:0}
+.citation-kind,.citation-status{font:12px/1.5 Arial,Helvetica,sans-serif;color:var(--muted);margin:10px 0 16px}
+.citation-text{font:17px/1.6 Georgia,'Times New Roman',serif;background:white;border:1px solid var(--line);padding:20px 22px 20px 46px;text-indent:-24px;overflow-wrap:anywhere;user-select:text;margin:0 0 18px}
+.citation-date{max-width:290px;margin-bottom:16px}
+.citation-date input{font-size:16px}
+.citation-notes{font:13px/1.55 Arial,Helvetica,sans-serif;margin:0 0 18px;color:var(--muted)}
+.citation-notes summary{cursor:pointer}
+.citation-notes ul{margin:10px 0;padding-left:20px}
+.citation-notes li{margin-bottom:7px}
+.citation-actions{display:flex;flex-wrap:wrap;gap:8px}
+.citation-actions button:disabled{cursor:not-allowed;opacity:.5}
+.citation-status{margin:12px 0 0;min-height:18px}
+@media(max-width:620px){.citation-row{padding:0 0 20px;border:0}.citation-row>td{padding:0}.citation-panel{padding:14px}.citation-header{align-items:flex-start}.citation-header h3{font-size:21px}.citation-text{font-size:16px;padding:16px 14px 16px 32px;text-indent:-18px}.citation-actions>*{flex:1 1 150px}}
+@media print{.citation-row,.entry-actions{display:none!important}}

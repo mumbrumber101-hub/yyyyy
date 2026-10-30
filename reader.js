@@ -39,7 +39,6 @@
     }
     if (restore && trigger.isConnected) {
       trigger.focus({preventScroll: true});
-      trigger.scrollIntoView({block: 'nearest', inline: 'nearest'});
     }
   }
 
@@ -108,7 +107,9 @@
       trigger.setAttribute('aria-controls', panel.id);
     }
     close.focus({preventScroll: true});
-    panel.scrollIntoView({block: 'start', inline: 'nearest'});
+    // Wix embeds this document in a tall iframe. Scrolling an element into
+    // view here also scrolls its ancestors and can move the reader off screen.
+    // Leave the viewport at the clicked entry as the panel expands beneath it.
   }
 
   main.addEventListener('click', event => {

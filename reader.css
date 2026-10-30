@@ -1,4 +1,5 @@
 .reader-help{font:13px/1.5 Arial,Helvetica,sans-serif;color:var(--muted);margin:0 0 16px}
+#catalogue,.about-resources{overflow-anchor:none}
 .read-here{display:block;margin:10px 0 0;padding:6px 10px;font-size:12px}
 .reading-row>td{padding:0 0 24px;border:0}
 .source-reader{border:1px solid var(--ink);background:var(--paper);scroll-margin-top:16px;min-width:0}
