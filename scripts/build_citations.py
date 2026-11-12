@@ -98,6 +98,7 @@ INTERVIEWS = {
 
 # These select the identified edition, not a mixture of original and reprint.
 SOURCE_OVERRIDES = {
+    'L725': ('<em>Maya</em>, no. 1 (Autumn 1970).', 'The essay occupies PDF pages 30–32; these are scan positions, not verified printed pagination. Exact publication day unverified.'),
     'L028': ('<em>THATTA ONLINE</em>, no. 458 (July 2026).', 'The catalogue also records the column number as 336.'),
     'L384': ('Ktistec Press, 2014–2020.', 'This entry covers volumes 1–5; editorial roles are not fully recorded.'),
     'L394': ('Springer Nature, n.d.', 'Book title, editors, page range, and publication year are not established in this record. Verify them before using this chapter citation.'),
