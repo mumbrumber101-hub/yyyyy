@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
 .reader-help{font:13px/1.5 Arial,Helvetica,sans-serif;color:var(--muted);margin:0 0 16px}
 #catalogue,.about-resources{overflow-anchor:none}
 .read-here{display:block;margin:10px 0 0;padding:6px 10px;font-size:12px}
@@ -17,3 +18,101 @@
 .resource-links .reader-actions{margin-top:14px}
 @media(max-width:620px){.reader-header{flex-direction:column;gap:12px;padding:15px 12px 10px}.reader-title{font-size:19px}.reader-note{padding:0 12px 12px}.reader-frame{height:540px;max-height:80vh}.reader-footer{padding:12px}.reading-row{padding:0 0 20px;border:0}.reading-row>td{padding:0}.reader-actions{width:100%}.reader-actions>*{flex:1;text-align:center}}
 @media print{.source-reader,.reading-row,.read-here,.reader-help{display:none!important}}
+
+/* Shared Easterwine presentation. The About text, bibliography and reader logic stay intact. */
+@media screen {
+  html:root {
+    --ink: #20261F;
+    --muted: #596253;
+    --line: #D9DDD5;
+    --paper: #F8F8F4;
+    --wash: #F0F2EB;
+    --teal: #356269;
+    --control-border: #879180;
+    --heading-font: 'EB Garamond', Georgia, serif;
+    --body-font: 'Poppins', Arial, sans-serif;
+  }
+  html body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body-font);
+    font-size: 18px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  body main { max-width: 980px; padding: 32px 0 64px; }
+  body .about-copy { max-width: 760px; margin: 0 0 40px; }
+  body .about-copy h1 {
+    font-family: var(--heading-font);
+    font-size: 44px;
+    font-weight: 400;
+    line-height: 1.12;
+    letter-spacing: -.025em;
+    margin: 0 0 14px;
+  }
+  body .about-copy p { font-size: 18px; line-height: 1.6; margin-bottom: 24px; }
+  body .about-copy p:last-child { margin-bottom: 0; }
+  body a { color: var(--teal); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  body a:hover { color: var(--ink); background: transparent; }
+  body a:focus-visible, body button:focus-visible, body input:focus-visible,
+  body select:focus-visible, body summary:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; }
+  body h2, body h3 { font-family: var(--heading-font); font-weight: 500; letter-spacing: 0; }
+  body h2 { font-size: 28px; line-height: 1.2; margin-bottom: 18px; }
+  body .about-resources { max-width: 760px; margin: 0 0 40px; padding-top: 28px; gap: 32px; }
+  body .about-resources h2 { font-size: 28px; }
+  body .resource-links li { margin-bottom: 20px; font-size: 18px; line-height: 1.6; }
+  body .resource-links span { font-size: 14px; line-height: 1.6; margin-top: 5px; }
+  body .bibliography-tool { border-color: var(--line); padding: 20px 0; }
+  body .bibliography-tool > summary { min-height: 44px; padding: 6px 0; font-family: var(--heading-font); font-size: 28px; line-height: 1.2; }
+  body .rule, body .controls, body thead, body footer { border-color: var(--line); }
+  body .kicker, body button, body label, body .entry-id, body .venue, body .subject,
+  body .status, body .language, body .count, body select, body input, body footer,
+  body .button, body .annotation details { font-family: var(--body-font); }
+  body .button, body button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    min-width: 44px;
+    padding: 10px 14px;
+    border-color: var(--control-border);
+    border-radius: 4px;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  body .button:hover, body button:hover { background: var(--wash); border-color: var(--teal); color: var(--teal); }
+  body input, body select { min-height: 44px; border-color: var(--control-border); border-radius: 4px; background: var(--paper); font-size: 16px; line-height: 1.5; }
+  body input[type=search] { font-size: 16px; }
+  body label { font-size: 14px; line-height: 1.5; }
+  body .method > summary { min-height: 44px; padding: 8px 0; font-size: 18px; font-weight: 500; line-height: 1.5; }
+  body .method p, body .method ul { font-size: 18px; line-height: 1.6; }
+  body .count { font-size: 14px; line-height: 1.5; }
+  body th { font-family: var(--body-font); font-size: 13px; line-height: 1.5; font-weight: 500; }
+  body td { font-size: 18px; line-height: 1.6; }
+  body .title { font-family: var(--heading-font); font-size: 24px; line-height: 1.25; font-weight: 600; }
+  body .who strong { font-size: 15px; line-height: 1.5; }
+  body .who > span:not(.entry-id), body .venue, body .subject, body .status { font-size: 14px; line-height: 1.5; }
+  body .entry-id { font-size: 12px; color: var(--muted); }
+  body .status .priority { font-size: 14px; }
+  body .annotation details, body .annotation details p, body .annotation details a { font-size: 14px; line-height: 1.5; }
+  body .annotation summary { min-height: 44px; padding: 10px 0; }
+  body footer { font-size: 14px; line-height: 1.5; }
+  body .reader-help, body .reader-note, body .citation-kind, body .citation-status, body .citation-notes { font-family: var(--body-font); font-size: 14px; line-height: 1.5; }
+  body .reader-title, body .citation-header h3 { font-family: var(--heading-font); font-size: 24px; line-height: 1.25; font-weight: 500; }
+  body .reader-actions .button, body .reader-actions button, body .entry-actions .read-here, body .entry-actions .cite-entry { font-family: var(--body-font); font-size: 14px; line-height: 1.5; min-height: 44px; min-width: 44px; }
+  body .source-reader { border-color: var(--control-border); }
+  body .reader-close { background: var(--teal); border-color: var(--teal); color: var(--paper); }
+  body .reader-close:hover { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+  body .citation-text { font-family: var(--body-font); font-size: 18px; line-height: 1.6; background: var(--paper); }
+  body .citation-notes summary { min-height: 44px; padding: 10px 0; }
+}
+@media screen and (max-width: 620px) {
+  body main { padding: 24px 0 44px; }
+  body .about-copy h1 { font-size: 32px; line-height: 1.12; margin-bottom: 12px; }
+  body .about-resources { grid-template-columns: 1fr; gap: 24px; }
+  body .bibliography-tool > summary { font-size: 25px; }
+  body .what .title { font-size: 24px; }
+  body .results-bar { flex-wrap: wrap; }
+}
