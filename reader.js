@@ -148,3 +148,11 @@
   });
   document.querySelector('.reader-help').hidden = false;
 })();
+
+/* Load the About height bridge without touching the bibliography document. */
+(() => {
+  if (window.parent === window || document.querySelector('script[src*="about-flow.js"]')) return;
+  const script = document.createElement('script');
+  script.src = new URL('about-flow.js?v=20261115', document.baseURI).href;
+  document.head.appendChild(script);
+})();
