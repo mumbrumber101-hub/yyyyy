@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>About | Arrive at Easterwine</title>
+<style>body{margin:32px;background:#F8F8F4;color:#20261F;font:18px/1.5 Georgia,serif}a{color:#356269}</style></head>
+<body><p id="loading">Loading the About page…</p><noscript><p><a href="./" target="_top">Open the About page</a></p></noscript>
+<script>
+(async function(){
+ try {
+  var source=new URL('index.html',location.href);source.searchParams.set('flow','58c7e170');
+  var response=await fetch(source.href);if(!response.ok)throw Error('About page unavailable');
+  var markup=await response.text();
+  if(!/<script\b[^>]*src=["'][^"']*about-flow\.js/i.test(markup)){
+   markup=markup.replace('</head>','<script src="about-flow.js?v=20261115" defer><'+'/script></head>');
+  }
+  document.open();document.write(markup);document.close();
+ }catch(error){document.getElementById('loading').textContent='The About page could not load.';var a=document.createElement('a');a.href='./';a.target='_top';a.textContent='Open the About page';document.body.appendChild(a);}
+})();
+</script></body></html>
