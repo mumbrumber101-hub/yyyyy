@@ -116,6 +116,7 @@
   body .what .title { font-size: 24px; }
   body .results-bar { flex-wrap: wrap; }
   body .controls, body .control2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  body .controls > div, body .control2 > div { min-width: 0; }
+  body .controls > div, body .control2 > div { width: 100%; min-width: 0; max-width: 100%; }
   body .controls input, body .controls select { min-width: 0; max-width: 100%; }
+  body #catalogue td { width: 100%; min-width: 0; max-width: 100%; overflow-wrap: anywhere; }
 }
